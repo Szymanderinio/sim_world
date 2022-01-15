@@ -16,8 +16,6 @@ abstract class Organism {
             this.liveLength = organism.liveLength;
             this.powerToReproduce = organism.powerToReproduce;
             this.sign = organism.sign;
-            this.position = position;
-            this.world = world;
         }
         else {
             if (position != null) {
@@ -94,15 +92,15 @@ abstract class Organism {
 
     public abstract Organism clone();
 
-    public ArrayList<Action> consequences(Organism attackingOrganism) {
-        ArrayList<Action> result = new ArrayList<>();
+    public Action consequences(Organism attackingOrganism) {
+        Action result;
         ActionEnum ae = new ActionEnum();
 
         if (power > attackingOrganism.getPower()) {
-            result.add(new Action(ae.A_REMOVE, new Position(-1,-1), 0, attackingOrganism));
+            result = new Action(ae.A_REMOVE, new Position(-1,-1), 0, attackingOrganism);
         }
         else {
-            result.add(new Action(ae.A_REMOVE, new Position(-1,-1), 0, this));
+            result = new Action(ae.A_REMOVE, new Position(-1,-1), 0, this);
         }
         return result;
     }

@@ -155,8 +155,10 @@ public class World {
         }
         if (pomOrganism == null) {
             for (Organism organism : newOrganisms) {
-                pomOrganism = organism;
-                break;
+                if (organism.getPosition().equals(position)) {
+                    pomOrganism = organism;
+                    break;
+                }
             }
         }
 
@@ -196,7 +198,9 @@ public class World {
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("\nTurn: " + turn + "\n");
+        result.append("   0  1  2  3  4  5  6  7  8  9\n");
         for (int wY = 0; wY < worldY; wY++) {
+            result.append(wY).append(" ");
             for (int wX = 0; wX < worldX; wX++) {
                 Organism org = getOrganismFromPosition(new Position(wX, wY));
                 if (org != null) {

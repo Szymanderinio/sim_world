@@ -17,21 +17,19 @@ abstract class Plant extends Organism {
         ArrayList<Action> result = new ArrayList<>();
         Plant newPlant;
         Position newPosition;
+        ArrayList<Position> pomPositions = getFreeNeighboringPosition(this.getPosition());
 
-        if (this.ifReproduce()) {
-            ArrayList<Position> pomPositions = getFreeNeighboringPosition(this.getPosition());
-            if (pomPositions.size() > 0) {
-                Random ran = new Random();
-                ActionEnum ae = new ActionEnum();
+        if (this.ifReproduce() && pomPositions.size() > 0) {
+            Random ran = new Random();
+            ActionEnum ae = new ActionEnum();
 
-                newPosition = pomPositions.get(ran.nextInt(pomPositions.size()));
-                newPlant = (Plant) clone();
-                newPlant.setPosition(newPosition);
-                newPlant.setWorld(getWorld());
-                this.setPower(this.getPower()/2);
-                result.add(new Action(ae.A_ADD, newPosition, 0, newPlant));
-
-            }
+            newPosition = pomPositions.get(ran.nextInt(pomPositions.size()));
+            newPlant = (Plant) clone();
+            newPlant.initParams();
+            newPlant.setPosition(newPosition);
+            newPlant.setWorld(getWorld());
+            this.setPower(this.getPower()/2);
+            result.add(new Action(ae.A_ADD, newPosition, 0, newPlant));
         }
         return result;
     }

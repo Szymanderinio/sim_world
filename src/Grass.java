@@ -10,11 +10,11 @@ public class Grass extends Plant{
         this.setInitiative(0);
         this.setLiveLength(6);
         this.setPowerToReproduce(3);
-        this.setSign("[G]");
+        this.setSign(ConsoleColors.GREEN_BOLD + "[G]" + ConsoleColors.RESET);
     }
 
     @Override
     public Organism clone() {
-        return new Grass(this, null, null);
+        return new Grass(new Grass(null, null, null), null, null);
     }
 }
