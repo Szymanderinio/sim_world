@@ -5,9 +5,9 @@ public class Main {
 
         Organism newOrg = new Grass(null, new Position(1,1), jaWorld);
         jaWorld.addOrganism(newOrg);
-        Organism newOrg2 = new Grass(null, new Position(9,9), jaWorld);
+        Organism newOrg2 = new Dandelion(null, new Position(9,9), jaWorld);
         jaWorld.addOrganism(newOrg2);
-        Organism newOrg5 = new Sheep(null, new Position(2,2), jaWorld);
+        Organism newOrg5 = new Sheep(null, new Position(4,4), jaWorld);
         jaWorld.addOrganism(newOrg5);
 
 
