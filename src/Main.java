@@ -9,6 +9,8 @@ public class Main {
         jaWorld.addOrganism(newOrg2);
         Organism newOrg3 = new Wolf(null, new Position(5,6), jaWorld);
         jaWorld.addOrganism(newOrg3);
+        Organism newOrg4 = new Toadstool(null, new Position(0,9), jaWorld);
+        jaWorld.addOrganism(newOrg4);
         Organism newOrg5 = new Sheep(null, new Position(4,4), jaWorld);
         jaWorld.addOrganism(newOrg5);
 

@@ -29,7 +29,7 @@ public class Wolf extends Animal {
             this.setLastPosition(getPosition());
             Organism metOrganism = this.getWorld().getOrganismFromPosition(newPosition);
             if (metOrganism != null && metOrganism.getClass() != Plant.class) {
-                result.add(metOrganism.consequences(this));
+                result.addAll(metOrganism.consequences(this));
             }
         }
         return result;

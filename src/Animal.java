@@ -31,7 +31,7 @@ abstract class Animal extends Organism {
             lastPosition = getPosition();
             Organism metOrganism = this.getWorld().getOrganismFromPosition(newPosition);
             if (metOrganism != null) {
-                result.add(metOrganism.consequences(this));
+                result.addAll(metOrganism.consequences(this));
             }
         }
         return result;

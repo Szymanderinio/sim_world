@@ -92,15 +92,15 @@ abstract class Organism {
 
     public abstract Organism clone();
 
-    public Action consequences(Organism attackingOrganism) {
-        Action result;
+    public ArrayList<Action> consequences(Organism attackingOrganism) {
+        ArrayList<Action> result = new ArrayList<>();
         ActionEnum ae = new ActionEnum();
 
         if (power > attackingOrganism.getPower()) {
-            result = new Action(ae.A_REMOVE, new Position(-1,-1), 0, attackingOrganism);
+            result.add(new Action(ae.A_REMOVE, new Position(-1,-1), 0, attackingOrganism));
         }
         else {
-            result = new Action(ae.A_REMOVE, new Position(-1,-1), 0, this);
+            result.add(new Action(ae.A_REMOVE, new Position(-1,-1), 0, this));
         }
         return result;
     }
