@@ -11,7 +11,7 @@ public class Wolf extends Animal {
         this.setPower(8);
         this.setInitiative(4);
         this.setLiveLength(15);
-        this.setPowerToReproduce(15);
+        this.setPowerToReproduce(13);
         this.setSign(ConsoleColors.WHITE_BACKGROUND + ConsoleColors.BLACK_BOLD + "[W]" + ConsoleColors.RESET);
     }
 

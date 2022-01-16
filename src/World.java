@@ -66,7 +66,7 @@ public class World {
         ArrayList<Organism> result = new ArrayList<>();
 
         for (Organism org : listOfOrg) {
-            if (positionOnBoard(org.getPosition())) {
+            if (positionOnBoard(org.getPosition()) || org.getClass() == Alien.class) {
                 result.add(org);
             }
         }
@@ -74,12 +74,11 @@ public class World {
         return result;
     }
 
-    /* makeTurn*/
     public void makeTurn() {
         ArrayList<Action> actions = new ArrayList<>();
 
         for (Organism org : organisms) {
-            if (positionOnBoard(org.getPosition())) {
+            if (positionOnBoard(org.getPosition()) || org.getClass() == Alien.class) {
                 actions = org.move();
                 for (Action a : actions) {
                     makeMove(a);
