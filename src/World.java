@@ -192,8 +192,6 @@ public class World {
         return result;
     }
 
-    /* BRAKUJE filterPositionsWithoutAnimals(self, fields): */
-
     public ArrayList<Position> filterPositionsWithOtherSpecies(ArrayList<Position> fields, Class specie) {
         ArrayList<Position> result = new ArrayList<>();
         Organism pomOrg;
