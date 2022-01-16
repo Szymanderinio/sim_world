@@ -195,6 +195,19 @@ public class World {
 
     /* BRAKUJE filterPositionsWithoutAnimals(self, fields): */
 
+    public ArrayList<Position> filterPositionsWithOtherSpecies(ArrayList<Position> fields, Class specie) {
+        ArrayList<Position> result = new ArrayList<>();
+        Organism pomOrg;
+        for (Position filed : fields) {
+            pomOrg = getOrganismFromPosition(filed);
+            if (pomOrg != null && pomOrg.getClass() != specie) {
+                result.add(filed);
+            }
+        }
+
+        return result;
+    }
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder("\nTurn: " + turn + "\n");
